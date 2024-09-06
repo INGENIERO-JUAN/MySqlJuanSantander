@@ -1,1 +1,0 @@
-select * from pais where pais.id=1
