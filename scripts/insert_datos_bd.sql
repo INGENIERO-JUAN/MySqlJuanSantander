@@ -1,6 +1,5 @@
 use hoja_de_vida;
 
-
 -- Inserción de datos en la tabla 'pais'
 INSERT INTO pais (pais) VALUES 
 ('Colombia'), 
@@ -17,16 +16,15 @@ INSERT INTO pais (pais) VALUES
 -- Inserción de datos en la tabla 'departamento'
 INSERT INTO departamento (departamento, idpais) VALUES 
 ('Antioquia', 1), 
-('Cundinamarca', 1), 
-('Buenos Aires', 2),
-('São Paulo', 3),
-('Ciudad de México', 4),
-('Santiago', 5),
-('Lima', 6),
-('Quito', 7),
-('Caracas', 8),
-('La Paz', 9),
-('Asunción', 10);
+('Cundinamarca', 2), 
+('Buenos Aires', 3),
+('São Paulo', 4),
+('Cde México', 5),
+('Santiago', 6),
+('Lima', 7),
+('Quito', 8),
+('Caracas', 9),
+('La Paz', 10);
 
 -- Inserción de datos en la tabla 'ciudad'
 INSERT INTO ciudad (ciudad, iddepartamento) VALUES 
@@ -34,13 +32,13 @@ INSERT INTO ciudad (ciudad, iddepartamento) VALUES
 ('Bogotá', 2), 
 ('La Plata', 3),
 ('São Paulo', 4),
-('Ciudad de México', 5),
+('CdMéxico', 5),
 ('Santiago de Chile', 6),
 ('Lima', 7),
 ('Quito', 8),
 ('Caracas', 9),
-('La Paz', 10),
-('Asunción', 11);
+('La Paz', 10);
+
 
 -- Inserción de datos en la tabla 'empresa'
 INSERT INTO empresa (nit, idcontrato) VALUES 
@@ -159,15 +157,15 @@ INSERT INTO referencia_personal (telefono, mail) VALUES
 INSERT INTO persona (nombre1, nombre2, apellido1, apellido2, documento, idtipo_documento, mail, direccion, telefono, idgenero, fecha_nac, libreta_militar, idtipo_libreta, idrh, idciudad, idinstitucion)
 VALUES 
 ('Juan', 'Carlos', 'Pérez', 'Gómez', 123456789, 1, 'juan@example.com', 'Calle 123', 3123456789, 1, '1990-05-15', '12345', 1, 1, 1, 1),
-('María', 'Elena', 'Rodríguez', 'López', 987654321, 2, 'maria@example.com', 'Carrera 456', 3109876543, 2, '1992-08-10', '67890', 2, 2, 2, 2),
+('María', 'Elena', 'Rodríguez', 'López', 987654321, 2, 'maria@example.com', 'Carrera 456', 3109876543, 2, '1992-08-10', '67890', 3, 2, 1, 2),
 ('Pedro', 'Luis', 'Sánchez', 'Torres', 112233445, 3, 'pedro@example.com', 'Avenida 789', 3001234567, 1, '1985-12-25', '34567', 3, 3, 3, 3),
-('Ana', 'Isabel', 'Martínez', 'Hernández', 223344556, 4, 'ana@example.com', 'Calle 111', 3204567890, 2, '1995-03-12', '45678', 1, 4, 4, 4),
-('Laura', 'Patricia', 'Ramírez', 'Moreno', 334455667, 5, 'laura@example.com', 'Carrera 222', 3156789012, 2, '1998-07-23', '56789', 2, 5, 5, 5),
-('Carlos', 'Andrés', 'García', 'Rivas', 445566778, 1, 'carlos@example.com', 'Avenida 333', 3198765432, 1, '1993-11-14', '67890', 3, 6, 6, 6),
-('Luis', 'Fernando', 'Fernández', 'Ruiz', 556677889, 2, 'luis@example.com', 'Calle 444', 3112345678, 1, '1987-09-09', '78901', 1, 7, 7, 7),
-('Andrea', 'Carolina', 'Suárez', 'Díaz', 667788990, 3, 'andrea@example.com', 'Carrera 555', 3134567890, 2, '1991-06-01', '89012', 2, 8, 8, 8),
-('Diana', 'Paola', 'Vargas', 'Castillo', 778899001, 4, 'diana@example.com', 'Avenida 666', 3145678901, 2, '1996-10-27', '90123', 3, 9, 9, 9),
-('José', 'Antonio', 'Ortiz', 'Mejía', 889900112, 5, 'jose@example.com', 'Calle 777', 3167890123, 1, '1982-02-18', '01234', 1, 10, 10, 10);
+('Ana', 'Isabel', 'Martínez', 'Hernández', 223344556, 4, 'ana@example.com', 'Calle 111', 3204567890, 2, '1995-03-12', '45678', 3, 2, 2, 4),
+('Laura', 'Patricia', 'Ramírez', 'Moreno', 334455667, 5, 'laura@example.com', 'Carrera 222', 3156789012, 2, '1998-07-23', '56789', 2, 5, 4, 5),
+('Carlos', 'Andrés', 'García', 'Rivas', 445566778, 1, 'carlos@example.com', 'Avenida 333', 3198765432, 1, '1993-11-14', '67890', 3, 6, 1, 6),
+('Luis', 'Fernando', 'Fernández', 'Ruiz', 556677889, 2, 'luis@example.com', 'Calle 444', 3112345678, 1, '1987-09-09', '78901', 1, 6, 7, 7),
+('Andrea', 'Carolina', 'Suárez', 'Díaz', 667788990, 3, 'andrea@example.com', 'Carrera 555', 3134567890, 2, '1991-06-01', '89012', 2, 2, 8, 8),
+('Diana', 'Paola', 'Vargas', 'Castillo', 778899001, 4, 'diana@example.com', 'Avenida 666', 3145678901, 2, '1996-10-27', '90123', 3, 4, 9, 9),
+('José', 'Antonio', 'Ortiz', 'Mejía', 889900112, 5, 'jose@example.com', 'Calle 777', 3167890123, 1, '1982-02-18', '01234', 1, 2, 10, 10);
 
 -- Inserción de datos en la tabla 'persona_referencia'
 INSERT INTO persona_referencia (idreferencia_personal, idpersona) VALUES 
