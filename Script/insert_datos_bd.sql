@@ -1,7 +1,7 @@
-use hoja_de_vida;
+USE hojaDeVida;
 
--- Inserción de datos en la tabla 'pais'
-INSERT INTO pais (pais) VALUES 
+-- Insertion of data into the 'country' table
+INSERT INTO country (name) VALUES 
 ('Colombia'), 
 ('Argentina'), 
 ('Brasil'), 
@@ -13,8 +13,8 @@ INSERT INTO pais (pais) VALUES
 ('Bolivia'), 
 ('Paraguay');
 
--- Inserción de datos en la tabla 'departamento'
-INSERT INTO departamento (departamento, idpais) VALUES 
+-- Insertion of data into the 'department' table
+INSERT INTO department (name, idCountry) VALUES 
 ('Antioquia', 1), 
 ('Cundinamarca', 2), 
 ('Buenos Aires', 3),
@@ -26,8 +26,8 @@ INSERT INTO departamento (departamento, idpais) VALUES
 ('Caracas', 9),
 ('La Paz', 10);
 
--- Inserción de datos en la tabla 'ciudad'
-INSERT INTO ciudad (ciudad, iddepartamento) VALUES 
+-- Insertion of data into the 'city' table
+INSERT INTO city (name, idDepartment) VALUES 
 ('Medellín', 1), 
 ('Bogotá', 2), 
 ('La Plata', 3),
@@ -39,9 +39,8 @@ INSERT INTO ciudad (ciudad, iddepartamento) VALUES
 ('Caracas', 9),
 ('La Paz', 10);
 
-
--- Inserción de datos en la tabla 'empresa'
-INSERT INTO empresa (nit, idcontrato) VALUES 
+-- Insertion of data into the 'company' table
+INSERT INTO company (taxId, idContract) VALUES 
 (900123456, 1), 
 (900654321, 2), 
 (900987654, 3), 
@@ -53,21 +52,21 @@ INSERT INTO empresa (nit, idcontrato) VALUES
 (901789012, 9),
 (901890123, 10);
 
--- Inserción de datos en la tabla 'cargo'
-INSERT INTO cargo (cargo, descripcion) VALUES 
-('Gerente', 'Responsable de toda la operación'), 
-('Analista', 'Análisis de datos e informes'),
-('Desarrollador', 'Desarrollo de software'),
-('Contador', 'Manejo de contabilidad'),
-('Vendedor', 'Ventas y atención al cliente'),
-('Ingeniero', 'Desarrollo de proyectos de ingeniería'),
-('Abogado', 'Asesoría legal'),
-('Director', 'Dirección y liderazgo'),
-('Técnico', 'Soporte técnico y mantenimiento'),
-('Consultor', 'Consultoría empresarial');
+-- Insertion of data into the 'jobPosition' table
+INSERT INTO jobPosition (positionName, description) VALUES 
+('Manager', 'Responsible for the entire operation'), 
+('Analyst', 'Data analysis and reports'),
+('Developer', 'Software development'),
+('Accountant', 'Accounting management'),
+('Salesperson', 'Sales and customer service'),
+('Engineer', 'Development of engineering projects'),
+('Lawyer', 'Legal advice'),
+('Director', 'Direction and leadership'),
+('Technician', 'Technical support and maintenance'),
+('Consultant', 'Business consulting');
 
--- Inserción de datos en la tabla 'empresa_cargo'
-INSERT INTO empresa_cargo (idempresa, idcargo) VALUES 
+-- Insertion of data into the 'companyPosition' table
+INSERT INTO companyPosition (idCompany, idPosition) VALUES 
 (1, 1), 
 (2, 2), 
 (3, 3), 
@@ -79,45 +78,45 @@ INSERT INTO empresa_cargo (idempresa, idcargo) VALUES
 (9, 9),
 (10, 10);
 
--- Inserción de datos en la tabla 'tipo_contrato'
-INSERT INTO tipo_contrato (tipo_contrato) VALUES 
-('Indefinido'), 
-('Temporal'),
-('Por Obra o Labor'),
-('Pasantía'),
-('Consultoría');
+-- Insertion of data into the 'contractType' table
+INSERT INTO contractType (name) VALUES 
+('Indefinite'), 
+('Temporary'),
+('By Work or Labor'),
+('Internship'),
+('Consulting');
 
--- Inserción de datos en la tabla 'contrato'
-INSERT INTO contrato (codigo_contrato, idtipo_contrato) VALUES 
+-- Insertion of data into the 'contract' table
+INSERT INTO contract (contractCode, idContractType) VALUES 
 (12345, 1), 
 (67890, 2),
 (11223, 3),
 (44556, 4),
 (77889, 5);
 
--- Inserción de datos en la tabla 'tipo_documento'
-INSERT INTO tipo_documento (tipo_documento) VALUES 
+-- Insertion of data into the 'documentType' table
+INSERT INTO documentType (name) VALUES 
 (1), 
 (2), 
 (3), 
 (4), 
 (5);
 
--- Inserción de datos en la tabla 'genero'
-INSERT INTO genero (genero) VALUES 
-('Masculino'), 
-('Femenino'),
-('Otro'),
-('Prefiero no decir');
+-- Insertion of data into the 'gender' table
+INSERT INTO gender (name) VALUES 
+('Male'), 
+('Female'),
+('Other'),
+('Prefer not to say');
 
--- Inserción de datos en la tabla 'tipo_libreta'
-INSERT INTO tipo_libreta (tipo_libreta) VALUES 
+-- Insertion of data into the 'militaryBookletType' table
+INSERT INTO militaryBookletType (name) VALUES 
 (1), 
 (2), 
 (3);
 
--- Inserción de datos en la tabla 'rh'
-INSERT INTO rh (rh) VALUES 
+-- Insertion of data into the 'bloodType' table
+INSERT INTO bloodType (name) VALUES 
 ('O+'), 
 ('A+'), 
 ('B+'), 
@@ -127,8 +126,8 @@ INSERT INTO rh (rh) VALUES
 ('B-'), 
 ('AB-');
 
--- Inserción de datos en la tabla 'institucion'
-INSERT INTO institucion (nit, institucion) VALUES 
+-- Insertion of data into the 'institution' table
+INSERT INTO institution (taxId, institutionName) VALUES 
 (800123456, 1), 
 (800654321, 2), 
 (800987654, 3), 
@@ -140,8 +139,8 @@ INSERT INTO institucion (nit, institucion) VALUES
 (801789012, 9),
 (801890123, 10);
 
--- Inserción de datos en la tabla 'referencia_personal'
-INSERT INTO referencia_personal (telefono, mail) VALUES 
+-- Insertion of data into the 'personalReference' table
+INSERT INTO personalReference (phone, email) VALUES 
 ('3123456789', 'juan@example.com'), 
 ('3109876543', 'maria@example.com'), 
 ('3001234567', 'pedro@example.com'), 
@@ -153,8 +152,8 @@ INSERT INTO referencia_personal (telefono, mail) VALUES
 ('3145678901', 'diana@example.com'),
 ('3167890123', 'jose@example.com');
 
--- Inserción de datos en la tabla 'persona'
-INSERT INTO persona (nombre1, nombre2, apellido1, apellido2, documento, idtipo_documento, mail, direccion, telefono, idgenero, fecha_nac, libreta_militar, idtipo_libreta, idrh, idciudad, idinstitucion)
+-- Insertion of data into the 'person' table
+INSERT INTO person (firstName, middleName, lastName, secondLastName, document, idDocumentType, email, address, phone, idGender, birthDate, militaryBooklet, idMilitaryBookletType, idBloodType, idCity, idInstitution)
 VALUES 
 ('Juan', 'Carlos', 'Pérez', 'Gómez', 123456789, 1, 'juan@example.com', 'Calle 123', 3123456789, 1, '1990-05-15', '12345', 1, 1, 1, 1),
 ('María', 'Elena', 'Rodríguez', 'López', 987654321, 2, 'maria@example.com', 'Carrera 456', 3109876543, 2, '1992-08-10', '67890', 3, 2, 1, 2),
@@ -167,8 +166,8 @@ VALUES
 ('Diana', 'Paola', 'Vargas', 'Castillo', 778899001, 4, 'diana@example.com', 'Avenida 666', 3145678901, 2, '1996-10-27', '90123', 3, 4, 9, 9),
 ('José', 'Antonio', 'Ortiz', 'Mejía', 889900112, 5, 'jose@example.com', 'Calle 777', 3167890123, 1, '1982-02-18', '01234', 1, 2, 10, 10);
 
--- Inserción de datos en la tabla 'persona_referencia'
-INSERT INTO persona_referencia (idreferencia_personal, idpersona) VALUES 
+-- Insertion of data into the 'personReference' table
+INSERT INTO personReference (idPersonalReference, idPerson) VALUES 
 (1, 1), 
 (2, 2), 
 (3, 3), 
@@ -180,8 +179,8 @@ INSERT INTO persona_referencia (idreferencia_personal, idpersona) VALUES
 (9, 9),
 (10, 10);
 
--- Inserción de datos en la tabla 'institucion_persona'
-INSERT INTO institucion_persona (idinstitucion, idpersona) VALUES 
+-- Insertion of data into the 'institutionPerson' table
+INSERT INTO institutionPerson (idInstitution, idPerson) VALUES 
 (1, 1), 
 (2, 2), 
 (3, 3), 
